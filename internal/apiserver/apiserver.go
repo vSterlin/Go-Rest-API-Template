@@ -3,11 +3,8 @@ package apiserver
 import (
 	"net/http"
 
-	"github.com/vSterlin/api-template/internal/app/store"
-
-	// Postgres driver
-	_ "github.com/lib/pq"
-	"github.com/vSterlin/api-template/internal/app/config"
+	"github.com/vSterlin/api-template/internal/config"
+	"github.com/vSterlin/api-template/internal/store"
 )
 
 // Start starts up the server

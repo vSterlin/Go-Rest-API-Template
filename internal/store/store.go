@@ -2,10 +2,11 @@ package store
 
 import (
 	"database/sql"
+	// Postgres driver
+	_ "github.com/lib/pq"
+	"github.com/vSterlin/api-template/internal/repository"
 
-	"github.com/vSterlin/api-template/internal/app/repository"
-
-	"github.com/vSterlin/api-template/internal/app/config"
+	"github.com/vSterlin/api-template/internal/config"
 )
 
 type Store struct {

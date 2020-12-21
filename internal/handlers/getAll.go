@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/vSterlin/api-template/internal/app/repository"
+	"github.com/vSterlin/api-template/internal/repository"
 )
 
 func GetAllHandler(tr *repository.TemplateRepo) http.HandlerFunc {

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/vSterlin/api-template/internal/app/repository"
+	"github.com/vSterlin/api-template/internal/repository"
 
 	"github.com/gorilla/mux"
 )

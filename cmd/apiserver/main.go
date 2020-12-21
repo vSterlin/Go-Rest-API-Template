@@ -4,10 +4,10 @@ import (
 	"flag"
 	"log"
 
-	"github.com/vSterlin/api-template/internal/app/config"
+	"github.com/vSterlin/api-template/internal/config"
 
 	"github.com/BurntSushi/toml"
-	"github.com/vSterlin/api-template/internal/app/apiserver"
+	"github.com/vSterlin/api-template/internal/apiserver"
 )
 
 var (

@@ -3,10 +3,10 @@ package repository
 import (
 	"database/sql"
 
-	"github.com/vSterlin/api-template/internal/app/model"
+	"github.com/vSterlin/api-template/internal/model"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks github.com/vSterlin/api-template/internal/app/repository TemplateStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks github.com/vSterlin/api-template/internal/repository TemplateStore
 type TemplateStore interface {
 	Query(q string, args ...interface{}) (*sql.Rows, error)
 	QueryRow(q string, args ...interface{}) *sql.Row

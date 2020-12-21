@@ -5,8 +5,8 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
-	"github.com/vSterlin/api-template/internal/app/handlers"
-	"github.com/vSterlin/api-template/internal/app/store"
+	"github.com/vSterlin/api-template/internal/handlers"
+	"github.com/vSterlin/api-template/internal/store"
 )
 
 type server struct {
