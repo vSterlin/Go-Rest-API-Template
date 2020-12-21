@@ -1,35 +1,23 @@
 package apiserver
 
 import (
-	"database/sql"
 	"net/http"
+
+	"github.com/vSterlin/api-template/internal/app/store"
 
 	// Postgres driver
 	_ "github.com/lib/pq"
-	"github.com/vSterlin/api-template/internal/app/store"
+	"github.com/vSterlin/api-template/internal/app/config"
 )
 
 // Start starts up the server
-func Start(config *Config) error {
-	db, err := newDB(config.DatabaseURL)
+func Start(config *config.Config) error {
+	db, err := store.New(config.Store)
 	if err != nil {
 		return nil
 	}
 	defer db.Close()
-	store := store.New(db)
 
-	srv := newServer(store)
-	return http.ListenAndServe(config.BindAddr, srv)
-}
-
-func newDB(databaseURL string) (*sql.DB, error) {
-	db, err := sql.Open("postgres", databaseURL)
-
-	if err != nil {
-		return nil, err
-	}
-	if err := db.Ping(); err != nil {
-		return nil, err
-	}
-	return db, nil
+	srv := newServer(db)
+	return http.ListenAndServe(config.Server.BindAddr, srv)
 }

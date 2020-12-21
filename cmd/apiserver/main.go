@@ -4,6 +4,8 @@ import (
 	"flag"
 	"log"
 
+	"github.com/vSterlin/api-template/internal/app/config"
+
 	"github.com/BurntSushi/toml"
 	"github.com/vSterlin/api-template/internal/app/apiserver"
 )
@@ -19,7 +21,7 @@ func init() {
 func main() {
 	flag.Parse()
 
-	config := apiserver.NewConfig()
+	config := config.Defaults()
 	_, err := toml.DecodeFile(configPath, config)
 
 	if err != nil {

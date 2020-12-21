@@ -5,11 +5,12 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/vSterlin/api-template/internal/app/repository"
+
 	"github.com/gorilla/mux"
-	"github.com/vSterlin/api-template/internal/app/store"
 )
 
-func GetOneHandler(tr *store.TemplateRepository) http.HandlerFunc {
+func GetOneHandler(tr *repository.TemplateRepo) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		id, err := strconv.Atoi(mux.Vars(r)["id"])
 		if err != nil {
